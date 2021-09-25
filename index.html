@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="mainText">
+      <h2>Simple, traffic-based pricing</h2>
+      <p>Sign-up for our 30-day trial. No credit card required.</p>
+      </div>
+      <div class="sub">
+        <div class="header">
+          <p><span id="views">100k</span> PageViews</p>
+          <h2>
+            $ <span id="price">16 </span>.00 <span id="subtext">/month</span>
+          </h2>
+        </div>
+
+        <div class="slider-container">
+          <div class="slider-track"></div>
+          <div class="slider-track-gray"></div>
+          <input
+            type="range"
+            id="range"
+            class="slider"
+            min="0"
+            max="100"
+            step="1"
+            value="0"
+          />
+          <div class="thumb" id="selector"></div>
+        </div>
+
+        <div class="billing">
+          <p>Monthly Billing</p>
+          <span class="switch">
+            <input id="check" type="checkbox" />
+            <label for="check" class="switcher">
+              <span class="toggler"></span>
+            </label>
+          </span>
+
+          <p>Yearly Billing</p>
+          <p id="discount">-25% discount</p>
+        </div>
+        <hr />
+        <div class="footer">
+          <ul>
+            <li>Unlimited websites</li>
+            <li>100% data ownership</li>
+            <li>Email reports</li>
+          </ul>
+
+          <button id="trail">Start my trial</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-form" id="my-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Please, fill out your details to start the free trail</h2>
+      </div>
+      <div class="modal-body">
+      <form>
+        <input
+          name="name"
+          type="text"
+          id="fname"
+          placeholder="Full Name"
+          class="name"
+          required
+        />
+        <input
+          name="company"
+          type="text"
+          id="company"
+          placeholder="Company Name"
+          class="address"
+          required
+        />
+        <input
+          name="email"
+          type="email"
+          id="emailAddress"
+          placeholder="Email Address"
+          class="name"
+          required
+        />
+        <input
+          name="phone"
+          type="number"
+          id="phone"
+          placeholder="Phone number"
+          class="name"
+          required
+        />
+        <button id="submit" class="btnForm">Submit</button>
+      </form>
+      </div>
+      </div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

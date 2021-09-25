@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-image: url(./images/bg-pattern.svg);
+  background-repeat: no-repeat;
+}
+
+.main {
+  margin: 8% auto;
+  width: 70%;
+}
+
+.main h2 {
+  text-align: center;
+  color: hsl(227, 35%, 25%);
+}
+
+.main p {
+  text-align: center;
+  color: hsl(225, 20%, 60%);
+}
+.sub {
+  background-color: hsl(230, 100%, 99%);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 1px 3px #ccc;
+  width: 50%;
+  margin: 25px auto;
+}
+
+.header {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header p {
+  color: hsl(225, 20%, 60%);
+  text-transform: uppercase;
+}
+
+.header h2 {
+  color: hsl(227, 35%, 25%);
+  font-size: 32px;
+}
+
+#subtext {
+  font-size: 12px;
+  color: hsl(225, 20%, 60%);
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+}
+.slider {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  transform: translate(-1px, -8px);
+  opacity: 0;
+}
+.slider-track {
+  position: relative;
+  z-index: 1;
+  transform: translateY(14px);
+  height: 8px;
+  border: 1px solid hsl(174, 77%, 80%);
+  border-radius: 50px;
+  width: 50%;
+  background-color: hsl(174, 77%, 80%);
+}
+.slider:hover + .thumb {
+  background-color: hsl(174, 77%, 80%);
+}
+.slider-track-gray {
+  position: relative;
+  z-index: 0;
+  right: 0;
+  transform: translateY(6px);
+  height: 8px;
+  border-radius: 50px;
+  width: 100%;
+  background-color: hsl(224, 65%, 95%);
+}
+
+.thumb {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: -8px;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-style: 0;
+  border-radius: 50px;
+  background: url("images/icon-slider.svg") no-repeat center;
+  background-color: hsl(174, 86%, 45%);
+  pointer-events: none;
+}
+
+.slider::-webkit-slider-thumb {
+  transform: translateY(-45%);
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-style: none;
+}
+
+.slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: grab;
+  width: 50px;
+  height: 50px;
+  border-radius: 10rem;
+  border-style: none;
+  background-color: hsl(174, 86%, 45%);
+}
+
+.billing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 20%;
+}
+
+.billing p {
+  color: hsl(225, 20%, 60%);
+}
+
+.switch {
+  position: relative;
+  transform: translateY(8px);
+}
+.switcher {
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: hsl(223, 50%, 87%);
+  transition: 0.4s;
+}
+
+#check {
+  display: none;
+}
+#check:checked + .switcher {
+  background-color: hsl(174, 93%, 39%);
+  transition: 0.4s;
+}
+.toggler {
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background-color: hsl(0, 0%, 100%);
+  transition: 0.4s;
+}
+#check:checked + .switcher > span {
+  position: absolute;
+  transform: translateX(28px);
+  transition: 0.4s;
+  background-color: hsl(0, 0%, 100%);
+}
+
+#discount {
+  font-size: 12px;
+  color: hsl(15, 100%, 70%);
+  background-color: hsl(14, 92%, 95%);
+  border-radius: 10px;
+  padding: 3px 6px;
+  font-weight: bold;
+  display: none;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer ul {
+  list-style-image: url(./images/icon-check.svg);
+}
+
+.footer ul li {
+  padding: 5px;
+  color: hsl(225, 20%, 60%);
+}
+
+.footer button {
+  background-color: hsl(227, 35%, 25%);
+  border-radius: 20px;
+  border: 1px solid hsl(227, 35%, 25%);
+  color: hsl(225, 20%, 60%);
+  padding: 10px;
+  font-weight: bolder;
+  font-family: "Manrope", sans-serif;
+}
+
+.modal-form {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  margin: 10% auto;
+  width: 60%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  /* animation-name: modalopen; */
+  /* animation-duration: var(--modal-duration); */
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-family: "Manrope", sans-serif;
+  text-align: center;
+}
+
+.modal-header {
+  background: hsl(227, 35%, 25%);
+  padding: 15px;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.modal-body {
+  padding: 10px 20px;
+  background: #fff;
+}
+
+.close {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+  padding: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: hsl(225, 20%, 60%);
+  overflow: hidden;
+}
+
+input {
+  width: 276px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  display: block;
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  color: hsl(225, 20%, 60%);
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px !important;
+}
+
+input.name {
+  background: hsl(230, 100%, 99%) no-repeat scroll 16px 16px;
+  padding-left: 45px;
+}
+
+input.address {
+  background: hsl(230, 100%, 99%) no-repeat scroll 16px 20px;
+  padding-left: 45px;
+}
+
+.btnForm {
+  width: 138px;
+  height: 44px;
+  border-radius: 20px;
+  float: right;
+  border: 1px solid hsl(227, 35%, 25%);
+  background: hsl(227, 35%, 25%);
+  padding: 10px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0,
+    inset rgba(255, 255, 255, 0.7) 0 1px 0;
+  text-shadow: #333333 0 1px 0;
+  font-family: "Manrope", sans-serif;
+  color: hsl(225, 20%, 60%);
+  font-weight: bolder;
+}
+
+.btnForm:hover {
+  border: 1px solid #253737;
+  text-shadow: #333333 0 1px 0;
+  background: hsl(227, 35%, 25%);
+  color: #fff;
+}
+
+.btnForm:active {
+  margin-top: 1px;
+  text-shadow: #333333 0 -1px 0;
+  border: 1px solid #253737;
+  background: hsl(227, 35%, 25%);
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .main {
+    width: 130%;
+  }
+
+  .header {
+    display: block;
+  }
+
+  .footer {
+    display: block;
+  }
+
+  .footer button {
+    margin: 5px 70px;
+    padding: 9px;
+  }
+
+  .billing {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-left: 0%;
+    padding: 4px;
+  }
+
+  form {
+    width: 80%;
+  }
+
+  input {
+    width: 90% !important;
+    height: 48px;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+}
