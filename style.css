@@ -341,8 +341,13 @@ input.address {
 
 @media (max-width: 480px) {
   .main {
-    width: 130%;
+    width: 100%;
   }
+  
+  .sub {
+   width: 80%;
+  margin: 25px auto;
+}
 
   .header {
     display: block;
